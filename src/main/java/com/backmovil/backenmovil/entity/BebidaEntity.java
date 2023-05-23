@@ -2,10 +2,15 @@ package com.backmovil.backenmovil.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 @Entity
 @Table(name = "bebida")
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class BebidaEntity {
@@ -23,6 +28,9 @@ public class BebidaEntity {
 
     @Column(name = "descripcion")
     private String descripcion;
+
+    @Column(name = "cantidadAlmacenada")
+    private Integer cantidad;
 
     @Column(name = "valor")
     private Float valor;
