@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "direccion")
+@Table(name = "barrio")
 @AllArgsConstructor
 @NoArgsConstructor
 public class BarrioEntity {
