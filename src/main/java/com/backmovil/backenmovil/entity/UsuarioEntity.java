@@ -2,10 +2,12 @@ package com.backmovil.backenmovil.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "usuario")
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class UsuarioEntity {
