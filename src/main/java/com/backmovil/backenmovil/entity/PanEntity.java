@@ -1,8 +1,11 @@
 package com.backmovil.backenmovil.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
 @Table(name = "pan")
 public class PanEntity {
 
@@ -19,6 +22,9 @@ public class PanEntity {
 
     @Column(name = "descripcion")
     private String descripcion;
+
+    @Column(name = "cantidadAlmacenada")
+    private Integer cantidad;
 
     @Column(name = "valor")
     private Float valor;
