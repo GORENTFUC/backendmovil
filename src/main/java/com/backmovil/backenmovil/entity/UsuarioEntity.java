@@ -1,13 +1,13 @@
 package com.backmovil.backenmovil.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "usuario")
 @Getter
+@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class UsuarioEntity {
