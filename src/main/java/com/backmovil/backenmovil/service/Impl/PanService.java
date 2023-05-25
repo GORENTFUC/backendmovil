@@ -27,39 +27,6 @@ public class PanService implements IPanService {
         return panes.stream().filter(pan -> pan.getCantidad() > 0).collect(Collectors.toList());
     }
 
-    /*@Override
-    public PanEntity actualizarCantidadPanCompra(PanEntity panEntity) throws Exception {
-        Optional<PanEntity> objectPan = panRepository.findByNombre(panEntity.getNombre());
-        if (objectPan.isPresent()){
-            if(objectPan.get().getCantidad() > 0 && objectPan.get().getCantidad() >= panEntity.getCantidad()){
-
-                log.info("Descontando Cantidad de pan en nuestro sistema");
-                var nuevaCantidad = objectPan.get().getCantidad() - panEntity.getCantidad();
-                objectPan.get().setCantidad(nuevaCantidad);
-                return panRepository.save(objectPan.get());
-
-            } else {
-                if (objectPan.get().getCantidad() > 0) {
-                    int cantidadDisponible = objectPan.get().getCantidad();
-                    int cantidadSolicitada = panEntity.getCantidad();
-                    int cantidadDescontar = Math.min(cantidadDisponible, cantidadSolicitada);
-
-                    log.info("Descontando cantidad de pan en nuestro sistema");
-                    int nuevaCantidad = cantidadDisponible - cantidadDescontar;
-                    objectPan.get().setCantidad(nuevaCantidad);
-
-                    if (nuevaCantidad == 0) {
-                        log.info("El producto está agotado en la base de datos");
-                    }
-                    return panRepository.save(objectPan.get());
-                }
-            }
-            log.info("No hay cantidad disponibles para vender");
-            throw  new Exception("No hay cantidad disponibles para vender este producto. La cantidad disponible es: " + objectPan.get().getCantidad());
-        }
-        throw  new Exception("No tenemos el producto "+ panEntity.getNombre() +" para vender.");
-    }
-     */
 
     @Override
     public PanEntity actualizarCantidadPanCompra(PanDto panDto) throws Exception {

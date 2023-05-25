@@ -10,7 +10,6 @@ public interface IPanService {
 
     List<PanEntity> listarPanes();
 
-    //PanEntity actualizarCantidadPanCompra(PanEntity panEntity) throws Exception;
     PanEntity actualizarCantidadPanCompra(PanDto panDto) throws Exception;
 
 }
