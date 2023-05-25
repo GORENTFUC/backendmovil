@@ -27,6 +27,18 @@ public class PanService implements IPanService {
         return panes.stream().filter(pan -> pan.getCantidad() > 0).collect(Collectors.toList());
     }
 
+    @Override
+    public PanEntity actualizarCantidadProductoPan(PanDto panDto) throws Exception {
+        Optional<PanEntity> objectPan = panRepository.findByNombre(panDto.getNombre());
+        if (objectPan.isPresent()){
+            log.info("Actualizando la Cantidad de pan en nuestro sistema");
+            var cantidadNueva = objectPan.get().getCantidad() + panDto.getCantidad();
+            objectPan.get().setCantidad(cantidadNueva);
+            return panRepository.save(objectPan.get());
+        }
+        throw  new Exception("No tenemos el producto "+ panDto.getNombre());
+    }
+
 
     @Override
     public PanEntity actualizarCantidadPanCompra(PanDto panDto) throws Exception {

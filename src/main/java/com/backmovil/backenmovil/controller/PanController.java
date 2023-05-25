@@ -21,8 +21,14 @@ public class PanController {
         return iPanService.listarPanes();
     }
 
-    @PutMapping("actualizarCantidad")
-    public PanEntity actualizarCantidadPan(@RequestBody PanDto panDto) throws Exception{
+    @PutMapping("/actualizarCantidadCompra")
+    public PanEntity actualizarCantidadPanCompra(@RequestBody PanDto panDto) throws Exception{
         return iPanService.actualizarCantidadPanCompra(panDto);
     }
+
+    @PutMapping("/actualizarCantidadProducto")
+    public PanEntity actualizarCantidadProductoPan(@RequestBody PanDto panDto) throws Exception {
+        return iPanService.actualizarCantidadProductoPan(panDto);
+    }
+
 }
